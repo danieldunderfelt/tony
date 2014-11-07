@@ -1,10 +1,10 @@
 {
   "name": "tonydunderfelt",
   "version": "0.0.0",
-  "description": "A refreshing game of House",
+  "description": "Website of Tony Dunderfelt",
   "repository": {
     "type": "git",
-    "url": "git://github.com/danieldunderfelt/tony.git"
+    "url": "git://github.com/danieldunderfelt/Tony.git"
   },
   "browserify": {
     "transform": [

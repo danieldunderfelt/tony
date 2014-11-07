@@ -1,4 +1,4 @@
-<?php namespace App\Console;
+<?php namespace Dunderfelt\Tony\Console;
 
 use Exception;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
@@ -11,7 +11,7 @@ class Kernel extends ConsoleKernel {
 	 * @var array
 	 */
 	protected $commands = [
-		'App\Console\Commands\InspireCommand',
+		'Dunderfelt\Tony\Console\Commands\InspireCommand',
 	];
 
 	/**

@@ -1,4 +1,4 @@
-<?php namespace App\Http\Controllers;
+<?php namespace Dunderfelt\Tony\Http\Controllers;
 
 class HomeController extends Controller {
 
@@ -17,7 +17,7 @@ class HomeController extends Controller {
 
 	public function index()
 	{
-		return view('hello');
+		return view('index');
 	}
 
 }

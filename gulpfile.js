@@ -62,6 +62,5 @@ gulp.task('bs-reload', function () {
 gulp.task('default', ['browser-sync'], function () {
     gulp.watch("resources/assets/js/**/*.js", ['browserify']);
     gulp.watch("resources/assets/scss/**/*.scss", ['sass']);
-    gulp.watch(".app/**/*.php", ['bs-reload']);
-    gulp.watch('gulpfile.js', ['default']);
+    gulp.watch(["app/**/*.php", "resources/views/**/*.php"], ['bs-reload']);
 });

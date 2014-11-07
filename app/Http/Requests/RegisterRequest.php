@@ -1,4 +1,4 @@
-<?php namespace App\Http\Requests;
+<?php namespace Dunderfelt\Tony\Http\Requests;
 
 class RegisterRequest extends Request {
 

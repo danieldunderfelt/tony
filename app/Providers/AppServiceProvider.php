@@ -1,4 +1,4 @@
-<?php namespace App\Providers;
+<?php namespace Dunderfelt\Tony\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

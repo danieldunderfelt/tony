@@ -1,8 +1,8 @@
-<?php namespace App\Http\Controllers;
+<?php namespace Dunderfelt\Tony\Http\Controllers;
 
-use App\Http\Requests\LoginRequest;
+use Dunderfelt\Tony\Http\Requests\LoginRequest;
 use Illuminate\Contracts\Auth\Guard;
-use App\Http\Requests\RegisterRequest;
+use Dunderfelt\Tony\Http\Requests\RegisterRequest;
 
 class AuthController extends Controller {
 

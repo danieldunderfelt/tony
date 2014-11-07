@@ -78,7 +78,7 @@ return [
 	|
 	*/
 
-	'key' => 'uMlZNUmZo0SW9Tx9m5r0BR1VaBxqlNIW',
+	'key' => 'YourSecretKey!!!',
 
 	'cipher' => MCRYPT_RIJNDAEL_128,
 
@@ -113,9 +113,9 @@ return [
 		/*
 		 * Application Service Providers...
 		 */
-		'App\Providers\AppServiceProvider',
-		'App\Providers\EventServiceProvider',
-		'App\Providers\RouteServiceProvider',
+		'Dunderfelt\Tony\Providers\AppServiceProvider',
+		'Dunderfelt\Tony\Providers\EventServiceProvider',
+		'Dunderfelt\Tony\Providers\RouteServiceProvider',
 
 		/*
 		 * Laravel Framework Service Providers...
