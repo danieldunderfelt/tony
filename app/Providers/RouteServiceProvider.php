@@ -26,7 +26,7 @@ class RouteServiceProvider extends ServiceProvider {
 	 */
 	public function before(Router $router)
 	{
-		//
+        $router->pattern('slug', '[a-zA-Z0-9-_]+');
 	}
 
 	/**

@@ -7,7 +7,12 @@
 <script src="assets/js/index.js"></script>
 </head>
 <body>
-
+    <div class="site-container">
+        @include("partials/header")
+        <main>
+            @yield("page-content")
+        </main>
+    </div>
 </body>
 </html>
  

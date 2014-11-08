@@ -7,6 +7,8 @@ var notify = require("gulp-notify");
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 var filter = require('gulp-filter');
+var imagemin = require('gulp-imagemin');
+var changed = require('gulp-changed');
 
 var handleErrors = function() {
 
@@ -29,27 +31,32 @@ gulp.task('browser-sync', function() {
     });
 });
 
+gulp.task('images', function () {
+    return gulp.src('resources/assets/img/**/*.{jpg,png}')
+        .pipe(changed('public/assets/img'))
+        .pipe(imagemin())
+        .pipe(gulp.dest('public/assets/img'))
+        .pipe(browserSync.reload({stream: true}));
+});
+
 gulp.task('browserify', function(){
 
     var browserified = transform(function(filename) {
-        return browserify(filename)
-            .bundle()
+        return browserify(filename, { debug: true})
+            .bundle();
     }).on('error', handleErrors);
 
     return gulp.src(['resources/assets/js/index.js'])
         .pipe(browserified)
         .on('error', handleErrors)
         .pipe(gulp.dest('public/assets/js'))
-        .on('error', handleErrors)
         .pipe(browserSync.reload({stream: true}));
 });
 
 gulp.task('sass', function () {
     return gulp.src('resources/assets/scss/*.scss')
-        .pipe(sourcemaps.init())
-        .pipe(sass())
+        .pipe(sass({ errLogToConsole: true }))
         .pipe(autoprefixer())
-        .pipe(sourcemaps.write())
         .pipe(gulp.dest('public/assets/css'))
         .pipe(filter('**/*.css'))
         .pipe(browserSync.reload({stream: true}));
@@ -62,5 +69,6 @@ gulp.task('bs-reload', function () {
 gulp.task('default', ['browser-sync'], function () {
     gulp.watch("resources/assets/js/**/*.js", ['browserify']);
     gulp.watch("resources/assets/scss/**/*.scss", ['sass']);
+    gulp.watch("resources/assets/img/**/*.{jpg,png}", ['images']);
     gulp.watch(["app/**/*.php", "resources/views/**/*.php"], ['bs-reload']);
 });

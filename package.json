@@ -21,13 +21,14 @@
     "es6ify": "^1.4.0",
     "gulp": "^3.8.7",
     "gulp-autoprefixer": "^1.0.1",
+    "gulp-changed": "^1.0.0",
     "gulp-filter": "^1.0.2",
+    "gulp-imagemin": "^1.2.1",
     "gulp-notify": "^2.0.0",
+    "gulp-ruby-sass": "^0.7.1",
     "gulp-sass": "^1.1.0",
     "gulp-sourcemaps": "^1.2.7",
-    "vinyl-source-stream": "^1.0.0",
-    "vinyl-transform": "0.0.1",
-    "watchify": "^2.0.0"
+    "vinyl-transform": "0.0.1"
   },
   "dependencies": {
     "jquery": "^2.1.1",
