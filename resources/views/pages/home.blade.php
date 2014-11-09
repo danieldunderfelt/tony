@@ -1,9 +1,14 @@
 @extends("index")
 @section("page-content")
-    <header>
-        <h1>
-            {{{ $page->title }}}
-        </h1>
-    </header>
-    {!! $page->body !!}
+    <section class="page">
+        <header>
+            <h1>
+                {{{ $page->title }}}
+            </h1>
+        </header>
+        <article class="page-body">
+            {!! $page->body !!}
+        </article>
+        @include("modules.news")
+    </section>
 @stop

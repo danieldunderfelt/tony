@@ -13,7 +13,7 @@ class RouteServiceProvider extends ServiceProvider {
 	protected $middleware = [
 		'auth' => 'Dunderfelt\Tony\Http\Middleware\Authenticated',
 		'auth.basic' => 'Dunderfelt\Tony\Http\Middleware\AuthenticatedWithBasicAuth',
-		'guest' => 'Dunderfelt\Tony\Http\Middleware\IsGuest',
+		'guest' => 'Dunderfelt\Tony\Http\Middleware\IsGuest'
 	];
 
 	/**

@@ -1,13 +1,14 @@
 <?php namespace Dunderfelt\Tony;
 
-
 use Illuminate\Database\Eloquent\Model;
 
 class Page extends Model {
 
-    public function __construct()
-    {
+    protected $guarded = ["id", "created_at", "updated_at"];
 
+    public function media()
+    {
+        return $this->morphToMany('Dunderfelt\Tony\Media', 'mediable');
     }
 
     public function getPage($slug)
@@ -15,14 +16,18 @@ class Page extends Model {
         return $this->where("slug", $slug)->first();
     }
 
-    public function getTopLevel()
+    public function getSubPages($parentId)
     {
-        return $this->where("parent", 0)->select("title", "slug", "id")->get();
+        return $this->where("parent", $parentId)->get();
     }
 
-    public function getSubPages($slug)
+    public function getSlugById($id)
     {
-        $parent = $this->where("slug", $slug)->pluck("parent");
-        return $this->where("parent", $parent)->select("title", "slug", "id")->get();
+        return $this->where("id", $id)->pluck("slug");
+    }
+
+    public function getTopLevel()
+    {
+        return $this->where("parent", 0)->get();
     }
 } 

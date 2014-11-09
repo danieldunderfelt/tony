@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreatePagesTable extends Migration {
+class CreateBooksTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,14 +12,14 @@ class CreatePagesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('pages', function(Blueprint $table)
+		Schema::create('books', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->string('title');
-			$table->string('slug')->unique();
-			$table->string('type');
-			$table->integer('parent');
-			$table->text('body')->nullable();
+			$table->string('publisher');
+			$table->string('year');
+			$table->text('description');
+			$table->string('price');
 			$table->timestamps();
 		});
 	}
@@ -32,7 +32,7 @@ class CreatePagesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('pages');
+		Schema::drop('books');
 	}
 
 }

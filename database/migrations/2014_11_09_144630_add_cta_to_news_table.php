@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class AddToPages extends Migration {
+class AddCtaToNewsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,9 +12,10 @@ class AddToPages extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('pages', function(Blueprint $table)
+		Schema::table('news', function(Blueprint $table)
 		{
-			$table->integer('link')->nullable();
+			$table->string('cta_link');
+			$table->string('cta_text');
 		});
 	}
 
@@ -26,9 +27,10 @@ class AddToPages extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('pages', function(Blueprint $table)
+		Schema::table('news', function(Blueprint $table)
 		{
-			$table->dropColumn('link');
+			$table->dropColumn('cta_link');
+			$table->dropColumn('cta_text');
 		});
 	}
 

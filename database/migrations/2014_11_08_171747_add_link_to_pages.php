@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class AddToPages extends Migration {
+class AddLinkToPages extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -14,7 +14,7 @@ class AddToPages extends Migration {
 	{
 		Schema::table('pages', function(Blueprint $table)
 		{
-			$table->string('menu');
+			$table->integer('link')->nullable();
 		});
 	}
 
@@ -28,7 +28,7 @@ class AddToPages extends Migration {
 	{
 		Schema::table('pages', function(Blueprint $table)
 		{
-			$table->dropColumn('menu');
+			$table->dropColumn('link');
 		});
 	}
 

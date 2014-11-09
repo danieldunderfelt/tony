@@ -1,0 +1,64 @@
+.site-container > header {
+	background: $darkgrey;
+	position: fixed;
+	top: 0;
+	left: 0em;
+	width: 100%;
+	z-index: 100;
+
+	.container {
+		padding: 1.5em 4em 1em;
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.logo {
+		display: block;
+		float: left;
+	}
+
+	.main-nav {
+		float: left;
+		margin: 0.5rem 2rem 0 4rem;
+
+		li {
+			position: relative;
+			display: inline-block;
+			margin-left: 2.5em;
+
+			&:first-child {
+				margin-left: 0;
+			}
+
+			&.active {
+				@include triangle(down, $darkgrey, before, 1.667rem, 0.7rem);
+
+				&:before {
+					position: absolute;
+					left: 50%;
+					margin-left: -0.8335em;
+					bottom: -2.6em;
+				}
+			}
+		}
+	}
+
+	.sub-nav {
+		background: $blue;
+		padding: 0.6em 0 0.5em;
+		text-align: center;
+
+		li {
+			display: inline-block;
+			margin-left: 2em;
+
+			&:first-child {
+				margin-left: 0;
+			}
+		}
+	}
+}

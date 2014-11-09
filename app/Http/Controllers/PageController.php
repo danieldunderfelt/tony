@@ -1,19 +1,44 @@
 <?php namespace Dunderfelt\Tony\Http\Controllers;
 
+use Dunderfelt\Tony\Contracts\ContentRepository;
 use Dunderfelt\Tony\Page;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class PageController extends Controller {
 
-	public function index(Page $page)
-	{
-        $homePage = $page->getPage("tervetuloa");
-		return view('pages.home', ["page" => $homePage]);
-	}
+    /**
+     * @var ContentRepository
+     */
+    private $content;
 
-    public function page(Page $page, $slug)
+    public function __construct(ContentRepository $content)
     {
-        $getPage = $page->getPage($slug);
-        return view('pages.' . $getPage->type, ["page" => $getPage]);
+        $this->content = $content;
+    }
+
+    public function page($slug = "/")
+    {
+        $page = $this->content->getPage($slug);
+
+        $this->setActiveNav($page["page"]);
+        view()->share('subpages', $page["sub"]);
+
+        return view('pages.' . $page["page"]->type, [
+            "page" => $page["page"],
+            "content" => $page["content"]
+        ]);
+    }
+
+    private function setActiveNav($page)
+    {
+        $parent = $page->slug;
+
+        if( (int) $page->parent !== 0) {
+            $parent = $this->content->getSlugById($page->parent);
+        }
+
+        \Session::put("current-parent", $parent);
+        \Session::put("current-page", $page->slug);
     }
 
 }

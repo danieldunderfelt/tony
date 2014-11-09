@@ -11,8 +11,7 @@
 |
 */
 
-$router->get('/{slug}', 'PageController@page');
-$router->get('/', 'PageController@index');
+$router->get('/{slug?}', 'PageController@page');
 
 /*
 |--------------------------------------------------------------------------
