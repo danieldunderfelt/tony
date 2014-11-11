@@ -1,4 +1,4 @@
-<?php namespace Dunderfelt\Tony\Http;
+<?php namespace App\Http;
 
 use Exception;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
@@ -11,13 +11,12 @@ class Kernel extends HttpKernel {
 	 * @var array
 	 */
 	protected $middleware = [
-		'Dunderfelt\Tony\Http\Middleware\UnderMaintenance',
+		'Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode',
 		'Illuminate\Cookie\Middleware\EncryptCookies',
-		'Illuminate\Cookie\Middleware\AddQueuedCookiesToRequest',
-		'Illuminate\Session\Middleware\ReadSession',
-		'Illuminate\Session\Middleware\WriteSession',
+		'Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse',
+		'Illuminate\Session\Middleware\StartSession',
 		'Illuminate\View\Middleware\ShareErrorsFromSession',
-		'Dunderfelt\Tony\Http\Middleware\VerifyCsrfToken',
+		'Illuminate\Foundation\Http\Middleware\VerifyCsrfToken',
 	];
 
 	/**
