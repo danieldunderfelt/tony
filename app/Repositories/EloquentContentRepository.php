@@ -5,6 +5,7 @@ use Dunderfelt\Tony\Contracts\ContentRepository;
 use Dunderfelt\Tony\Media;
 use Dunderfelt\Tony\News;
 use Dunderfelt\Tony\Page;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class EloquentContentRepository implements ContentRepository {
 
