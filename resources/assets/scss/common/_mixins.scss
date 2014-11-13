@@ -57,9 +57,14 @@
 		height: 1px;
 		width: 100%;
 		position: absolute;
+		left: 0;
 		#{$position}: 0;
 		z-index: -1;
 		background: rgba(black, 0.4);
+
+		@if($position == top) {
+			top: -2px;
+		}
 	}
 }
 

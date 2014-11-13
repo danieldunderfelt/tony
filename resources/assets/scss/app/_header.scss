@@ -4,10 +4,11 @@
 	top: 0;
 	left: 0em;
 	width: 100%;
+	height: $header-height;
 	z-index: 100;
 
 	.container {
-		padding: 1.5em 4em 1em;
+		padding: 1.5em $side-padding 1em;
 	}
 
 	ul {
@@ -19,11 +20,18 @@
 	.logo {
 		display: block;
 		float: left;
+		width: $logo-width;
+		height: 48px;
+		overflow: hidden;
+
+		img {
+			max-width: 100%;
+		}
 	}
 
 	.main-nav {
 		float: left;
-		margin: 0.5rem 2rem 0 4rem;
+		margin: 0.5rem 2rem 0 $side-padding;
 
 		li {
 			position: relative;
@@ -49,8 +57,11 @@
 
 	.sub-nav {
 		background: $blue;
-		padding: 0.6em 0 0.5em;
-		text-align: center;
+		padding: 0.6em (($side-padding * 2) + $logo-width) 0.5em;
+
+		ul {
+
+		}
 
 		li {
 			display: inline-block;

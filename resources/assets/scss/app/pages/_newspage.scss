@@ -1,0 +1,39 @@
+.news .container {
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		width: 100%;
+	}
+
+	.news-list > li {
+		width: 100%;
+		@include clear;
+		padding: 2em 0;
+		@include divider(bottom, after);
+
+		&:first-child {
+			@include divider(top, before);
+		}
+
+		.wrapper {
+			@include clear;
+		}
+
+		.img {
+			float: left;
+			width: 30%;
+			margin-right: 5%;
+
+			img {
+				max-width: 100%;
+			}
+		}
+
+		article {
+			float: left;
+			width: 65%;
+		}
+	}
+}

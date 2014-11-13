@@ -48,11 +48,11 @@ h3 {
 h4 {
 	font-size: 0.778em;
 	font-family: $raleway;
-	font-weight: 900;
-	text-decoration: underline;
+	font-weight: 100;
 }
 
 p {
+	letter-spacing: 0.04rem;
 	font-size: 1em;
 	line-height: 1.5em;
 }
@@ -74,6 +74,10 @@ a {
 		text-decoration: none;
 		text-transform: capitalize;
 		color: #ffffff;
+
+		&:hover {
+			color: $blue;
+		}
 	}
 
 	&.active {
@@ -87,11 +91,16 @@ a {
 .sub-nav li {
 
 	a {
-		font-family: $cabin;
+		font-family: $raleway;
+		font-weight: 200;
 		font-size: 0.8em;
-		text-decoration: underline;
 		text-transform: capitalize;
+		text-decoration: none;
 		color: #ffffff;
+
+		&:hover {
+			color: $darkgrey;
+		}
 	}
 
 	&.active {
